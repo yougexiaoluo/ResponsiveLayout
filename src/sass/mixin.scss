@@ -1,1 +1,10 @@
 @charset 'utf-8';
+
+// 实现移动端1px边框
+@mixin onePixelBorder($size, $type, $color) {
+  border: $size $type $color;
+  -webkit-border: $size $type $color;
+  -moz-border: $size $type $color;
+  -ms-border: $size $type $color;
+  -o-border: $size $type $color;
+}
