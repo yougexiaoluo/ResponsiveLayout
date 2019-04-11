@@ -4,6 +4,7 @@
 // S 公共变量
 $borderBox: border-box;
 $white: #fff;
+$block: block;
 // E 公共变量
 
 body {
@@ -94,14 +95,94 @@ body {
         display: grid;
         grid-row-gap: .5rem;
 
+        // S 左边导航条的公共
         li {
           width: 5.6rem;
-          height: 5.2rem;
           background-color: #e3b7a6;
 
-          &:last-child {
-            height: 45.4rem;
+          a {
+            color: #33211f;
           }
+        }
+
+        // E 左边导航条的公共
+
+        li.all_recipes,
+        li.meal_type,
+        li.ingredients,
+        li.tags {
+          height: 5.2rem;
+
+          a {
+            display: $block;
+            height: inherit;
+            text-align: center;
+            font-size: .8rem;
+            box-sizing: $borderBox;
+            overflow: hidden;
+
+            i {
+              display: $block;
+              width: 1.5rem;
+              height: 1.5rem;
+              margin: 1.2rem auto 0;
+            }
+
+            span {
+              display: $block;
+              width: 3.5rem;
+              // 将字母转换为大写字母
+              text-transform: uppercase;
+              @include eliipsis;
+              margin: .5rem auto 0;
+            }
+          }
+
+          // 选中项
+          &.current_item {
+            background-color: #33211f;
+
+            a {
+              color: $white;
+            }
+          }
+
+        }
+
+        // 其它
+        li.other {
+          height: 45.4rem;
+
+          // 其余链接
+          .other_lis {
+            display: flex;
+            flex-direction: column;
+            padding-top: 2rem;
+            text-align: center;
+
+            li {
+              a {
+                display: block;
+                width: 3rem;
+                @include onePixelBorder(.15rem, solid, #674e47);
+                border-radius: .6rem;
+                box-sizing: $borderBox;
+                color: #674e47;
+                padding: .2rem;
+                margin: 0 auto;
+
+                i {
+                  margin-top: 0;
+                }
+              }
+
+              &:not(:last-of-type) {
+                margin-bottom: 2rem;
+              }
+            }
+          }
+
+
         }
       }
     }
@@ -115,12 +196,12 @@ body {
     grid-template-columns: [m_r_1] 23rem [m_r_2] 1fr [m_r_3] 23rem [m_r_4];
     grid-template-rows: repeat(6, 11rem);
     grid-template-areas:
-                        'a b c'
-                        'a d d'
-                        'a d d'
-                        'a d d'
-                        'a d d'
-                        'a e f';
+      'a b c'
+      'a d d'
+      'a d d'
+      'a d d'
+      'a d d'
+      'a e f';
     gap: .4rem .6rem;
 
     div {

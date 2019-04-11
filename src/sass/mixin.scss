@@ -8,3 +8,11 @@
   -ms-border: $size $type $color;
   -o-border: $size $type $color;
 }
+
+// 文字超出 以...进行显示
+@mixin eliipsis {
+  // 文字超出部分，以...显示
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
