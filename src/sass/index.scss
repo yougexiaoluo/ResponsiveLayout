@@ -1,10 +1,13 @@
 @charset 'utf-8';
 @import 'reset.scss';
 @import 'mixin.scss';
+@import 'media.scss';
 // S 公共变量
 $borderBox: border-box;
 $white: #fff;
 $block: block;
+$size: 2.4rem;
+$color: #63413d;
 // E 公共变量
 
 body {
@@ -197,20 +200,310 @@ body {
     grid-template-rows: repeat(6, 11rem);
     grid-template-areas:
       'a b c'
-      'a d d'
-      'a d d'
-      'a d d'
-      'a d d'
+      'a content content'
+      'a content content'
+      'a content content'
+      'a content content'
       'a e f';
     gap: .4rem .6rem;
 
-    div {
-      background-color: orange;
+    // 每一项
+    div.items {
+      display: flex;
+
+      // justify-content: center;
+      @for $i from 1 to 11 {
+        &:nth-child(#{$i}) div.items_bg {
+          @if $i==8 {
+            background-image: url('../assets/images/food_02.jpg');
+          }
+
+          @else if $i==9 {
+            background-image: url('../assets/images/food_05.jpg');
+          }
+
+          @else if $i==10 {
+            background-image: url('../assets/images/food_07.jpg');
+          }
+
+          @else {
+            background-image: url('../assets/images/food_0#{$i}.jpg');
+          }
+        }
+      }
+
+      // 图片
+      div.items_bg {
+        width: 11.5rem;
+        // 背景大小
+        position: relative;
+        background-position: 0 0;
+        background-size: cover;
+      }
+
+      i {
+        position: absolute;
+        top: .5rem;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        background-color: $white;
+        color: #9ac821;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: $size;
+      }
+
+      // 左边内容
+      div.items_c {
+        position: relative;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        width: 11.5rem;
+        height: inherit;
+        background-color: $white;
+
+        a {
+          color: #737373;
+          font-size: .7rem;
+        }
+
+        p {
+          font-size: .9rem;
+          font-family: 'CasperBoldItalic';
+          color: #3e3e3e;
+          margin-top: .8rem;
+        }
+
+        .items_c_b {
+          padding-right: 1rem;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1.6rem;
+          // 背景需要修改
+          color: $white;
+          font-size: .7rem;
+          line-height: 1.6rem;
+          text-align: right;
+          text-transform: uppercase;
+        }
+      }
     }
 
+    div.content {
+      $height: 11rem*4+1.2;
+      grid-area: content;
+      overflow: hidden;
+      height: $height;
 
-    div.span2 {
-      grid-area: d;
+
+      .layout {
+        height: 100%;
+
+        // 标题
+        .title_wrap {
+          width: 100%;
+          min-height: 3rem;
+          line-height: 3rem;
+          background: #fc4783;
+          color: $white;
+          padding-left: 1.1rem;
+          padding-right: .9rem;
+          text-align: right;
+
+          h2 {
+            float: left;
+            font-size: 1.2rem;
+          }
+
+          a {
+            padding: .2rem;
+            font-size: .7rem;
+            text-transform: uppercase;
+          }
+        }
+
+        // 左侧模块
+        .layout_left {
+          float: left;
+          overflow: auto;
+          width: 23.5rem;
+          height: $height - 3;
+          background: #fff;
+          box-sizing: border-box;
+          padding: 0 1rem;
+          // padding-bottom: 3.2rem;
+
+          // 用户信息
+          .info {
+            display: flex;
+            align-items: center;
+            color: $color;
+            font-size: 0;
+            line-height: 3rem;
+            margin-bottom: 1rem;
+
+            border-bottom: .1rem solid #fc4783;
+
+            @media screen and (-webkit-min-device-pixel-ratio: 2) {
+              border-bottom: .05rem solid #fc4783;
+            }
+
+            i {
+              margin-right: .4rem;
+              color: #fc4783;
+            }
+
+            .serves {
+              i {
+                font-size: .8rem;
+              }
+            }
+
+            .time {
+              margin: 0 2.9rem 0 1.1rem;
+
+              i {
+                font-size: 1rem;
+              }
+            }
+
+            .date {
+              i {
+                font-size: .9rem;
+              }
+            }
+
+          }
+
+          // 标题
+          h4 {
+            margin-bottom: 1.2rem;
+            color: $color;
+            font-size: .9rem;
+          }
+
+          p {
+            margin-bottom: 1.3rem;
+            color: #1c1717;
+            line-height: 1.1rem;
+            font-size: .8rem;
+          }
+
+          span {
+            font-size: .8rem;
+          }
+        }
+
+        // 右侧模块
+        .layout_right {
+          float: right;
+          width: 23rem;
+          height: $height - 3;
+          background-color: #ffefe9;
+
+          // picture
+          figure {
+            margin: 0;
+            width: 23rem;
+            height: 22.1rem;
+
+            img {
+              width: 100%;
+              height: 100%;
+              vertical-align: middle;
+            }
+          }
+
+          // title
+          h4 {
+            font-size: .9rem;
+            color: $color;
+            padding: .8rem 0rem 1rem;
+          }
+
+          .tap_view {
+            padding: 0rem 1rem;
+
+            ul {
+              flex-shrink: 0;
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              font-size: 0;
+
+              li {
+                text-align: center;
+              }
+            }
+
+            i {
+              display: block;
+              font-size: 1.2rem;
+              color: #fc4783;
+              margin: .5rem 0;
+            }
+
+            span {
+              font-size: .8rem;
+            }
+
+
+            .view_container {
+              display: flex;
+              flex-wrap: nowrap;
+              width: 18rem;
+              margin: 0 auto;
+              overflow: hidden;
+            }
+
+            // lunbo模块
+            .crumpets_wrap {
+              padding-bottom: 2rem;
+              position: relative;
+              border-bottom: .1rem solid #edcdc4;
+
+              @media screen and (-webkit-min-device-pixel-ratio: 2) {
+                border-bottom: .05rem solid #edcdc4;
+              }
+
+              .btn_wrap {
+                position: absolute;
+                bottom: .8rem;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .btn {
+                  float: left;
+                  width: .5rem;
+                  height: .5rem;
+                  border-radius: 50%;
+                  background-color: #f0d3ca;
+
+                  &:not(:last-of-type) {
+                    margin-right: .5rem;
+                  }
+
+                  &.current_page {
+                    background-color: #d19a8c;
+                  }
+                }
+              }
+            }
+
+            // 一流糕点区域
+            .topping_wrap {
+              ul {
+                width: 18rem;
+                margin: 0 auto;
+              }
+            }
+          }
+
+        }
+      }
     }
 
   }

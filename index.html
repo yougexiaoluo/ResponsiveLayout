@@ -12,6 +12,21 @@
   <link rel="stylesheet" href="/src/css/index.css">
   <link rel="shortcut icon" href="/foodblog.ico" type="image/x-icon">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1136878_ttvhm0k11ms.css">
+  <base href="./src/assets/images/">
+  <!-- <script async src="https://cdn.bootcss.com/template_js/0.7.1-1/template.js"></script> -->
+  <script async type="text/html" id="food-list-template">
+    {{each data.foodList}}
+    <div class="items">
+      <div class="items_bg">="iconfont {{$iconName}}"></i> -->
+      </div>
+      <div class="items_c">
+        <a href="javascript:;">{{$time}}</a>
+        <p>{{$foodName}}</p>
+        <div class="items_c_b">{{$foodType}}</div>
+      </div>
+    </div>
+    {{/each}}
+  </script>
 </head>
 
 <body>
@@ -93,24 +108,350 @@
 
     <!-- S 内容右边区域  -->
     <section class="main_right">
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="span2"></div>
-      <div class="span2"></div>
-      <div class="span2"></div>
-      <div class="span2"></div>
+      <div class="items">
+        <div class="items_bg">
+          <!-- <img src="./src/assets/images/food_01.jpg" alt=""> -->
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 14, 2012</a>
+          <p>New York vanilla cheesecake with blueberries</p>
+          <div class="items_c_b">salad</div>
+        </div>
+      </div>
+      <div class="items">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 23, 2012</a>
+          <p>Prosciutto & rocket forks</p>
+          <div class="items_c_b">soup</div>
+        </div>
+      </div>
+      <div class="items">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 14, 2012</a>
+          <p>Oatmeal with bananas & grapes</p>
+          <div class="items_c_b">breakfast</div>
+        </div>
+      </div>
+      <div class="items bg_r">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 14, 2012</a>
+          <p>Rolled shoulder of lamb with potato & steamed veggies</p>
+          <div class="items_c_b">main</div>
+        </div>
+      </div>
+      <div class="items">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 20,2012</a>
+          <p>Prosciutto & rocket forks</p>
+          <div class="items_c_b">starter</div>
+        </div>
+      </div>
+      <div class="items bg_r">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 16, 2012</a>
+          <p>New York vanilla cheesecake with blueberries</p>
+          <div class="items_c_b">dessert</div>
+        </div>
+      </div>
+      <div class="items">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 14, 2012</a>
+          <p>Summer salmon salad</p>
+          <div class="items_c_b">breakfast</div>
+        </div>
+      </div>
+      <div class="items bg_r">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 16, 2018</a>
+          <p>Oatmeal with bananas & grapes</p>
+          <div class="items_c_b">soup</div>
+        </div>
+      </div>
+      <div class="items bg_r">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 14, 2012</a>
+          <p>Mushroom soup</p>
+          <div class="items_c_b">salad</div>
+        </div>
+      </div>
+      <div class="items bg_r">
+        <div class="items_bg">
+          <i class="iconfont"></i>
+        </div>
+        <div class="items_c">
+          <a href="javascript:;">December 11, 2012</a>
+          <p>Smocked salmon salad with avocado</p>
+          <div class="items_c_b">breakfast</div>
+        </div>
+      </div>
+      <!-- 内容模块 -->
+      <div class="content">
+        <!-- 主要部分 -->
+        <section class="layout">
+          <!-- 标题 -->
+          <header class="title_wrap">
+            <h2>Raspberries & honey crumpets</h2>
+            <a class="dessert">dessert</a>
+          </header>
+          <!-- 左边文章部分 -->
+          <article class="layout_left">
+            <div class="info">
+              <div class="serves">
+                <i class="iconfont icon-people"></i>
+                <span>Serves</span>
+              </div>
+              <div class="time">
+                <i class="iconfont icon-shijian"></i>
+                <span>30 min</span>
+              </div>
+              <div class="date">
+                <i class="iconfont icon-rili"></i>
+                <span>December 14, 2012</span>
+              </div>
+            </div>
+            <h4>Preparation</h4>
+            <p>
+              Place all of the crumpet ingredients into the
+              Place all of the crumpet ingredients into the bowl
+            </p>
+            <p>
+              Place all of the crumpet ingredients into the
+              Place all of the crumpet ingredients into the bowl
+              the crumpet ingredients into
+            </p>
+            <p>
+              Place all of the crumpet ingredients into the
+              the crumpet ingredients into
+              the bowl of a food prPlace all of the crumpet
+            </p>
+            <p>
+              Place all of the crumpet ingredients into the
+              Place all of the crumpet ingredients into the bowl
+              the crumpet ingredients into
+              Place all of the crumpet ingredients into the bowl
+              the crumpet ingredients into
+              the bowl of a food prPlace all
+            </p>
+            <p>
+              Place all of the crumpet ingredients into the
+              Place all of the crumpet ingredients into the bowl
+              the crumpet ingredients into
+              Place all of theasdgto
+              Place all of theasdgto
+              Place all of the crumpet ingredients into the
+              Place all of the crumpet ingredients into the bowl
+              the crumpet ingredients into
+              the bowl of a food prPlace all of the crumpet
+            </p>
+            <span>Bon appetit!</span>
+          </article>
+          <!-- 右边banner以及轮播组件等模块 -->
+          <aside class="layout_right">
+            <!-- banner -->
+            <figure>
+              <img src="banner.jpg" alt="food_banner.jpg loading fail!">
+            </figure>
+            <section class="tap_view">
+              <div class="crumpets_wrap">
+                <h4 class="crumpets_title">Crumpets</h4>
+                <div class="view_container">
+                  <ul class="page_01">
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">500 g</span>
+                        <i class="iconfont icon-Honey"></i>
+                        <span class="last_s">Flour</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">1 tsp</span>
+                        <i class="iconfont icon-Sugar"></i>
+                        <span class="last_s">Sugar</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">1 sachet</span>
+                        <i class="iconfont icon-cup"></i>
+                        <span class="last_s">Yeast</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">½ tsp</span>
+                        <i class="iconfont icon-blob"></i>
+                        <span class="last_s">Soda</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">2 tsp</span>
+                        <i class="iconfont icon-shuibei"></i>
+                        <span class="last_s">Salt</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="page_02">
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">500 g</span>
+                        <i class="iconfont icon-Honey"></i>
+                        <span class="last_s">Flour</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">1 tsp</span>
+                        <i class="iconfont icon-Sugar"></i>
+                        <span class="last_s">Sugar</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">1 sachet</span>
+                        <i class="iconfont icon-cup"></i>
+                        <span class="last_s">Yeast</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">½ tsp</span>
+                        <i class="iconfont icon-blob"></i>
+                        <span class="last_s">Soda</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="first_s">2 tsp</span>
+                        <i class="iconfont icon-shuibei"></i>
+                        <span class="last_s">Salt</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="btn_wrap">
+                  <span class="btn current_page"></span>
+                  <span class="btn"></span>
+                </div>
+              </div>
+              <div class="topping_wrap">
+                <h4 class="topping_title">Topping</h4>
+                <ul class="page_01">
+
+                  <li>
+                    <a href="javascript:;">
+                      <span class="first_s">1 tsp</span>
+                      <i class="iconfont icon-liangshi"></i>
+                      <span class="last_s">Sugar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="first_s">2 tsp</span>
+                      <i class="iconfont icon-shuibei"></i>
+                      <span class="last_s">Salt</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="first_s">1 sachet</span>
+                      <i class="iconfont icon-cup"></i>
+                      <span class="last_s">Yeast</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="first_s">500 g</span>
+                      <i class="iconfont icon-Honey"></i>
+                      <span class="last_s">Flour</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="first_s">½ tsp</span>
+                      <i class="iconfont icon-blob"></i>
+                      <span class="last_s">Soda</span>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </section>
+          </aside>
+        </section>
+      </div>
     </section>
     <!-- E 内容右边区域  -->
   </section>
   <!-- E 内容区域 -->
 </body>
+
+<!-- <script type="text/javascript">
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', './src/mock/food.json', true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // 要执行的逻辑
+      console.log('request success!');
+    }
+  }
+  xhr.send(null);
+</script> -->
+
+<script>
+  var colorArr = ['#8fc209', '#6ec2eb', '#fe9a09', '#994800', '#47c3b9', '#fc4783', '#8fc209', '#fe9a09', '#6ec2eb',
+    '#8fc209'
+  ];
+
+  var icontFontNs = ['icon-liangshi', 'icon-Vegetables-', 'icon-rou', 'icon-fish', 'icon-liangshi', 'icon-Vegetables-',
+    'icon-rou', 'icon-fish', 'icon-liangshi', 'icon-Vegetables-'
+  ]
+
+  var itemsBs = document.querySelectorAll('div.items .items_c_b');
+  var items_bg_i = document.querySelectorAll('div.items_bg > i');
+  var itemsArr = document.querySelectorAll('div.items');
+  // 通过遍历的方式操作dom
+  itemsArr.forEach(function (v, i) {
+    if (itemsArr[i].className.indexOf('bg_r') !== -1) {
+      // 改变排列方向
+      itemsArr[i].style['flex-direction'] = 'row-reverse';
+      items_bg_i[i].style['right'] = '.5rem';
+    } else {
+      // 设置图标的位置
+      items_bg_i[i].style['left'] = '.5rem';
+    }
+    // 设置底部颜色
+    itemsBs[i].style['background-color'] = colorArr[i];
+    items_bg_i[i].setAttribute('class', 'iconfont ' + icontFontNs[i]);
+    items_bg_i[i].style['color'] = colorArr[i];
+  })
+</script>
 
 </html>
