@@ -13,10 +13,15 @@ $color: #63413d;
 body {
   background-color: #ffe3cc;
   font-size: 1.6rem;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   padding: 0 1rem;
 }
 
+// 屏幕适配开始了
+section.layout {
+  width: 76.8rem;
+  margin: 0 auto;
+}
 // S 顶部区域
 .header_wrap {
   header {
@@ -239,19 +244,26 @@ body {
         position: relative;
         background-position: 0 0;
         background-size: cover;
+
+        &:hover i {
+          transform: rotate(540deg);
+        }
       }
 
       i {
         position: absolute;
         top: .5rem;
         width: $size;
-        height: $size;
+        // height: $size;
         border-radius: 50%;
         background-color: $white;
+        box-shadow: .1rem .1rem .3rem .2rem rgba(0, 0, 0, .3),
+          -.1rem -.1rem .3rem .2rem rgba(0, 0, 0, .3);
         color: #9ac821;
         font-size: 1.2rem;
         text-align: center;
         line-height: $size;
+        transition: all .3s;
       }
 
       // 左边内容
@@ -262,6 +274,7 @@ body {
         width: 11.5rem;
         height: inherit;
         background-color: $white;
+        overflow: hidden;
 
         a {
           color: #737373;
@@ -278,7 +291,7 @@ body {
         .items_c_b {
           padding-right: 1rem;
           position: absolute;
-          bottom: 0;
+          bottom: -1.6rem;
           left: 0;
           width: 100%;
           height: 1.6rem;
@@ -288,6 +301,12 @@ body {
           line-height: 1.6rem;
           text-align: right;
           text-transform: uppercase;
+          transition: all .2s ease-in-out;
+        }
+
+        // 添加鼠标移入交互
+        &.items_c:hover .items_c_b {
+          bottom: 0;
         }
       }
     }
@@ -299,7 +318,7 @@ body {
       height: $height;
 
 
-      .layout {
+      .main_part {
         height: 100%;
 
         // 标题
@@ -403,6 +422,10 @@ body {
           width: 23rem;
           height: $height - 3;
           background-color: #ffefe9;
+
+          a {
+            color: #32211f;
+          }
 
           // picture
           figure {
